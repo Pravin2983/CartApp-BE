@@ -98,10 +98,7 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB and start the server
-mongoose.connect(DB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(DB_URL)
   .then(() => {
     console.log('✅ Connected to MongoDB');
     app.listen(PORT, '0.0.0.0', () => {
