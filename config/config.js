@@ -19,7 +19,7 @@
 const mongoose = require('mongoose');
 
 const mongoURI =
-  process.env.MONGO_URI || 'mongodb+srv://GovarthanahariN:hariajay123@cluster0.f50ul.mongodb.net/cartDB?retryWrites=true&w=majority';
+  process.env.MONGO_URI || 'mongodb+srv://pravinofcl29_db_user:aelpbYvyLHy4KjyH@cluster0.dcebxwo.mongodb.net/?appName=Cluster0';
 
 const connectDB = async () => {
   try {
