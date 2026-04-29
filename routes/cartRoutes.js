@@ -6,9 +6,17 @@ const Cart = require('../models/Cart'); // Directly import the Cart model
 // Route to get all available carts
 router.get('/available', cartController.getAvailableCarts);
 
+// Route to get details of a specific cart by ID
+router.get('/:id', cartController.getCartById);
+
+// Route to update the status of a cart (e.g., 'available', 'in-use', 'maintenance')
+router.patch('/:id/status', cartController.updateCartStatus);
+
+// Route to update the battery level of a cart
+router.patch('/:id/battery', cartController.updateBatteryLevel);
+
 // Optional route to get carts by parking row
 router.get('/row/:row', cartController.getCartsByRow);
-
 
 // Temporary route to add sample carts (for initial testing)
 router.post('/addSampleCarts', async (req, res) => {
@@ -28,13 +36,10 @@ router.post('/addSampleCarts', async (req, res) => {
   }
 });
 
-// Route to update the status of a cart (e.g., 'available', 'in-use', 'maintenance')
-router.patch('/:id/status', cartController.updateCartStatus);
 
-// Route to update the battery level of a cart
-router.patch('/:id/battery', cartController.updateBatteryLevel);
 
-// Route to get details of a specific cart by ID
-router.get('/:id', cartController.getCartById);
+
+
+
 
 module.exports = router;
